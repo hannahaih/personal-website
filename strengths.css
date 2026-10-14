@@ -1,0 +1,142 @@
+/* The strengths have one hierarchy: a clear label and one short explanation. */
+.strength-list {
+  display: grid;
+  gap: 32px;
+}
+
+.strength-row {
+  display: grid;
+  grid-template-columns: 44% minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
+}
+
+.strength-row h3 {
+  font-size: 25px;
+  line-height: 1.38;
+  letter-spacing: -0.025em;
+  font-weight: 600;
+}
+
+.strength-row p {
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+/* The reveal moves the marker and its dark lettering together. */
+@property --marker-progress {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 0%;
+}
+
+.text-marker {
+  --marker-colour: #f4ff68;
+  --marker-ink: #15171c;
+  --marker-progress: 0%;
+  font-weight: 600;
+  color: inherit;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  border-radius: 0.08em;
+}
+
+/* Short key phrases stay intact in the desktop reading layout. */
+@media screen and (min-width: 761px) {
+  .text-marker {
+    white-space: nowrap;
+    hyphens: none;
+  }
+}
+
+.strength-row:nth-child(2) .text-marker,
+[data-marker-tone="blue"] .text-marker { --marker-colour: #8dd7ff; }
+.strength-row:nth-child(3) .text-marker,
+[data-marker-tone="green"] .text-marker { --marker-colour: #94f0b4; }
+.strength-row:nth-child(4) .text-marker,
+[data-marker-tone="pink"] .text-marker { --marker-colour: #ffb0de; }
+
+@supports (background-clip: text) and (-webkit-text-fill-color: transparent) {
+  .text-marker {
+    background-image:
+      linear-gradient(90deg, var(--marker-ink) 0% var(--marker-progress), currentColor var(--marker-progress) 100%),
+      linear-gradient(90deg, var(--marker-colour) 0% var(--marker-progress), transparent var(--marker-progress) 100%);
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: 100% 100%;
+    background-origin: padding-box;
+    -webkit-background-clip: text, padding-box;
+    background-clip: text, padding-box;
+    -webkit-text-fill-color: transparent;
+    transition: --marker-progress 180ms ease-out;
+  }
+}
+
+/* Keep the entire role label readable when its summary activates a marker. */
+.career-entry summary[data-marker-scope]:hover .career-label strong,
+.career-entry summary[data-marker-scope]:focus-visible .career-label strong {
+  color: var(--ink);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  [data-marker-scope]:hover .text-marker,
+  [data-marker-scope]:focus-within .text-marker,
+  .text-marker:hover,
+  .text-marker:focus-within {
+    --marker-progress: 100%;
+    transition-duration: 90ms;
+    transition-timing-function: ease-out;
+  }
+}
+
+/* Touch has the same emphasis without an interaction that it cannot perform. */
+@media (hover: none), (pointer: coarse) {
+  .text-marker { --marker-progress: 100%; transition: none; }
+}
+
+/* Older browsers switch the full surface and dark text immediately. */
+@supports not ((background-clip: text) and (-webkit-text-fill-color: transparent)) {
+  @media (hover: hover) and (pointer: fine) {
+    [data-marker-scope]:hover .text-marker,
+    [data-marker-scope]:focus-within .text-marker,
+    .text-marker:hover,
+    .text-marker:focus-within {
+      background-color: var(--marker-colour);
+      color: var(--marker-ink);
+    }
+  }
+  @media (hover: none), (pointer: coarse) {
+    .text-marker { background-color: var(--marker-colour); color: var(--marker-ink); }
+  }
+}
+
+html[data-colour="off"] .text-marker {
+  --marker-progress: 0% !important;
+  background: none !important;
+  color: inherit !important;
+  -webkit-text-fill-color: currentColor !important;
+  transition: none !important;
+}
+
+@media (max-width: 760px) {
+  .strength-list { gap: 32px; }
+  .strength-row { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .strength-row h3 { font-size: 23px; line-height: 1.4; }
+  .strength-row p { font-size: 17px; line-height: 1.7; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .text-marker { transition: none !important; }
+}
+
+@media (forced-colors: active) {
+  .text-marker { background: none !important; -webkit-text-fill-color: currentColor !important; transition: none !important; }
+}
+
+@media print {
+  .strength-list { gap: 20px; }
+  .strength-row { gap: 24px; break-inside: avoid; }
+  .strength-row h3 { font-size: 14pt; }
+  .strength-row p { font-size: 11pt; }
+  .text-marker { background: none !important; color: inherit !important; -webkit-text-fill-color: currentColor !important; transition: none; }
+}

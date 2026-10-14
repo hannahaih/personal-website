@@ -1,0 +1,7 @@
+.brand { display: inline-flex; align-items: center; gap: 13px; min-height: 32px; line-height: 1; }
+/* Visible H ≈ 28px, visible name ≈ 14px, visible gap ≈ 14px. */
+.brand-mark { display: block; width: 29px; height: 29px; flex: 0 0 29px; transform: translateY(1px); }
+@media (max-width: 760px) {
+  .brand { gap: 12px; }
+  .brand-mark { width: 27px; height: 27px; flex-basis: 27px; }
+}

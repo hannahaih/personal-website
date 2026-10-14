@@ -1,0 +1,169 @@
+/* Colour lives outside the lettering. One visible reading unit breathes slowly. */
+@property --halo-breath { syntax: '<number>'; inherits: true; initial-value: .82; }
+@property --halo-drift { syntax: '<length>'; inherits: true; initial-value: 0px; }
+
+html:is([data-effect="atem"], [data-effect="horizont"], [data-effect="randlicht"]) {
+  --signal-ink: #18212a;
+  --halo-breath: .82;
+  --halo-drift: 0px;
+}
+html:is([data-effect="atem"], [data-effect="horizont"], [data-effect="randlicht"]) #pointer-colour { display: none; }
+html:is([data-effect="atem"], [data-effect="horizont"], [data-effect="randlicht"]) .text-marker {
+  background: none;
+  background-color: transparent !important;
+  box-shadow: none;
+  color: var(--signal-ink);
+  -webkit-text-fill-color: currentColor;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  font-weight: 700;
+  text-shadow: none;
+  transition: none !important;
+}
+.ambient-colour-zone {
+  --edge-colour: #a58bd2;
+  --edge-rgb: 133 96 235;
+  --matte-paper: #f0edf8;
+}
+.strength-row:nth-child(2), .ambient-colour-zone[data-marker-tone="blue"], [data-marker-tone="blue"] .ambient-colour-zone {
+  --edge-colour: #85afe9; --edge-rgb: 69 110 251; --matte-paper: #eaf0fa;
+}
+.strength-row:nth-child(3), .ambient-colour-zone[data-marker-tone="green"], [data-marker-tone="green"] .ambient-colour-zone {
+  --edge-colour: #78b99c; --edge-rgb: 46 148 114; --matte-paper: #e9f3ed;
+}
+.strength-row:nth-child(4), .ambient-colour-zone[data-marker-tone="pink"], [data-marker-tone="pink"] .ambient-colour-zone {
+  --edge-colour: #dc9abb; --edge-rgb: 213 95 150; --matte-paper: #f8edf3;
+}
+
+@keyframes reading-breath {
+  0%, 100% { --halo-breath: .82; --halo-drift: 0px; }
+  50% { --halo-breath: 1; --halo-drift: 1.5px; }
+}
+html:is([data-effect="atem"], [data-effect="horizont"], [data-effect="randlicht"]) .ambient-current {
+  animation: reading-breath 12s ease-in-out infinite;
+}
+
+/* 1. An opaque reading window protects the letters from the coloured aura. */
+html[data-effect="atem"] .ambient-seen .text-marker {
+  background-color: var(--paper) !important;
+  padding-inline: .06em;
+  margin-inline: -.06em;
+  border-radius: .12em;
+  box-shadow:
+    calc(-.13em + var(--halo-drift)) .09em .42em .04em rgb(69 110 251 / calc(.25 * var(--halo-breath))),
+    calc(.13em + var(--halo-drift)) .10em .38em .03em rgb(237 112 175 / calc(.22 * var(--halo-breath)));
+}
+
+/* 2. A stable, uniformly matte surface. Only the outside edge changes. */
+html[data-effect="horizont"] .ambient-colour-zone,
+html[data-effect="horizont"] .strength-row > p {
+  position: relative;
+  isolation: isolate;
+}
+html[data-effect="horizont"] .ambient-colour-zone:not(.strength-row)::before,
+html[data-effect="horizont"] .strength-row > p::before,
+html[data-effect="horizont"] .ambient-colour-zone:not(.strength-row)::after,
+html[data-effect="horizont"] .strength-row > p::after {
+  content: '';
+  position: absolute;
+  inset: -12px -14px;
+  border-radius: 6px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 420ms ease-out;
+}
+html[data-effect="horizont"] .ambient-colour-zone:not(.strength-row)::before,
+html[data-effect="horizont"] .strength-row > p::before {
+  z-index: -1;
+  background: var(--matte-paper);
+}
+html[data-effect="horizont"] .ambient-colour-zone:not(.strength-row)::after,
+html[data-effect="horizont"] .strength-row > p::after {
+  z-index: -2;
+  background: rgb(var(--edge-rgb) / .28);
+  filter: blur(15px);
+  transform: translateX(var(--halo-drift));
+}
+html[data-effect="horizont"] .ambient-current:not(.strength-row)::before,
+html[data-effect="horizont"] .strength-row.ambient-current > p::before { opacity: 1; }
+html[data-effect="horizont"] .ambient-current:not(.strength-row)::after,
+html[data-effect="horizont"] .strength-row.ambient-current > p::after { opacity: calc(.55 * var(--halo-breath)); }
+
+/* 3. A stronger coloured seam below the glyphs, plus one gentle margin light. */
+html[data-effect="randlicht"] .ambient-seen .text-marker {
+  background-image: linear-gradient(var(--edge-colour), var(--edge-colour));
+  background-repeat: no-repeat;
+  background-size: 100% 4px;
+  background-position: left bottom;
+  padding-bottom: .25em;
+}
+html[data-effect="randlicht"] .ambient-colour-zone { position: relative; isolation: isolate; }
+html[data-effect="randlicht"] .ambient-colour-zone::before,
+html[data-effect="randlicht"] .ambient-colour-zone::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  top: 3px;
+  bottom: 3px;
+  opacity: 0;
+  transition: opacity 420ms ease-out;
+}
+html[data-effect="randlicht"] .ambient-colour-zone::before {
+  left: -14px;
+  width: 3px;
+  background: var(--edge-colour);
+  border-radius: 2px;
+}
+html[data-effect="randlicht"] .ambient-colour-zone::after {
+  z-index: -1;
+  left: -20px;
+  width: 16px;
+  background: rgb(var(--edge-rgb) / .3);
+  filter: blur(7px);
+  transform: translateX(var(--halo-drift));
+}
+html[data-effect="randlicht"] .ambient-current::before { opacity: 1; }
+html[data-effect="randlicht"] .ambient-current::after { opacity: var(--halo-breath); }
+
+.colour-preview-new .colour-preview-pause {
+  grid-column: 2;
+  grid-row: 1;
+  width: 36px;
+  min-height: 36px;
+  padding: 0;
+  font-size: 20px;
+}
+.colour-preview-pause:disabled { opacity: .35; cursor: default; }
+html[data-ambient-motion="paused"] .ambient-current,
+html[data-ambient-suspended="true"] .ambient-current { animation-play-state: paused !important; }
+html[data-ambient-static="true"] .ambient-current { animation: none !important; }
+
+/* Turning colour off, system preferences and print restore a simple reading page. */
+html[data-colour="off"] .ambient-colour-zone { animation: none !important; }
+html[data-colour="off"] .ambient-colour-zone::before,
+html[data-colour="off"] .ambient-colour-zone::after { display: none !important; }
+html[data-colour="off"]:is([data-effect="atem"], [data-effect="horizont"], [data-effect="randlicht"]) .text-marker {
+  background: none !important;
+  box-shadow: none !important;
+  color: inherit !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+@media (prefers-reduced-motion: reduce), (hover: none), (pointer: coarse) {
+  .ambient-colour-zone { animation: none !important; }
+  .ambient-colour-zone::before, .ambient-colour-zone::after { transition: none !important; }
+}
+@media (forced-colors: active) {
+  .ambient-colour-zone { animation: none !important; }
+  .ambient-colour-zone::before, .ambient-colour-zone::after { display: none !important; }
+  html:is([data-effect="atem"], [data-effect="horizont"], [data-effect="randlicht"]) .text-marker { background: none !important; box-shadow: none !important; color: inherit !important; }
+}
+@media print {
+  .ambient-colour-zone { animation: none !important; }
+  .ambient-colour-zone::before, .ambient-colour-zone::after { display: none !important; }
+  html:is([data-effect="atem"], [data-effect="horizont"], [data-effect="randlicht"]) .text-marker { background: none !important; box-shadow: none !important; color: inherit !important; }
+}
+
+/* The strengths headings remain quiet when their body copy receives a surface. */
+html[data-colour="off"] .strength-row > p::before, html[data-colour="off"] .strength-row > p::after { display:none !important; }
+@media (prefers-reduced-motion: reduce), (hover: none), (pointer: coarse) { html[data-effect="horizont"] .strength-row > p::before, html[data-effect="horizont"] .strength-row > p::after { transition:none !important; } }
+@media print, (forced-colors: active) { html[data-effect="horizont"] .strength-row > p::before, html[data-effect="horizont"] .strength-row > p::after { display:none !important; } }

@@ -1,0 +1,14 @@
+/* Technical detail stays available within the career, without another main section. */
+.technical-background .technical-group h3 {
+  margin-bottom: 6px;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+.technical-background .technical-group + .technical-group { margin-top: 22px; }
+.technical-background .technical-group p { font-size: 16px; line-height: 1.75; }
+@media print {
+  .technical-background .technical-group { break-inside: avoid; }
+  .technical-background .technical-group h3,
+  .technical-background .technical-group p { font-size: 11pt; }
+}

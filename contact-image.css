@@ -1,0 +1,71 @@
+/* The contact address is a drawing; the action remains a native button. */
+.email-image-button {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  width: 320px;
+  max-width: 100%;
+  min-height: 44px;
+  margin-top: 30px;
+  padding: 5px 0;
+  border: 0;
+  border-radius: 2px;
+  background: transparent;
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.email-image-button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 6px;
+}
+
+.email-image-frame {
+  /* Keep the soft pencil edge, align the actual ink at source x=60. */
+  position: relative;
+  display: block;
+  width: calc(100% * 2085 / 2172);
+  aspect-ratio: 2085 / 274;
+  margin-left: calc(100% * -12 / 2172);
+  overflow: hidden;
+}
+
+.email-image {
+  /* Display the original canvas inside the (48, 234) artwork viewport. */
+  position: absolute;
+  left: calc(100% * -48 / 2085);
+  top: calc(100% * -234 / 274);
+  display: block;
+  width: calc(100% * 2172 / 2085);
+  max-width: none;
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.email-action-label {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.email-image-button:hover .email-action-label,
+.email-image-button:focus-visible .email-action-label {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 760px) {
+  .email-image-button { margin-top: 23px; }
+}
+
+@media print {
+  .email-image { filter: none; }
+  .email-action-label { display: none; }
+}
