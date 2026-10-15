@@ -4,6 +4,7 @@
   const caseView=document.getElementById('case-view');
   const caseBody=document.getElementById('case-body');
   const cases=window.HR_CASES || [];
+  const homeTitle=window.HR_SITE_TITLE || 'Hannah Reber · Digitale Strategie & Transformation';
   const escapeHTML=value=>String(value || '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   function highlightText(value, phrases=[]) {
     let remaining=String(value || '');
@@ -45,7 +46,9 @@
       home.hidden=true;caseView.hidden=false;
       if(shownCase!==selected.id) {
         caseBody.dataset.markerTone=selected.markerTone || 'yellow';
-        caseBody.innerHTML=`<header class="case-heading" data-ink-guard><h1 id="case-title" tabindex="-1">${escapeHTML(selected.title)}</h1><p class="project-name">${escapeHTML(selected.projectName)}</p><p class="case-lede">${escapeHTML(selected.role)}</p></header>${selected.sections.map(section=>`<section class="case-section" data-ink-guard><h2>${escapeHTML(section.title)}</h2><p data-marker-scope>${highlightText(section.text,section.highlights)}</p></section>`).join('')}<div class="case-end" data-ink-guard><a href="#fallstudien">Alle Fallstudien <span aria-hidden="true">→</span></a></div>`;
+        const facts=Array.isArray(selected.facts) ? selected.facts : [];
+        const overview=facts.length ? `<dl class="case-facts">${facts.map(fact=>`<div><dt>${escapeHTML(fact.label)}</dt><dd>${escapeHTML(fact.value)}</dd></div>`).join('')}</dl>` : `<p class="case-lede">${escapeHTML(selected.role)}</p>`;
+        caseBody.innerHTML=`<header class="case-heading" data-ink-guard><h1 id="case-title" tabindex="-1">${escapeHTML(selected.title)}</h1><p class="project-name">${escapeHTML(selected.projectName)}</p>${overview}</header>${selected.sections.map(section=>`<section class="case-section" data-ink-guard><h2>${escapeHTML(section.title)}</h2><p data-marker-scope>${highlightText(section.text,section.highlights)}</p></section>`).join('')}<div class="case-end" data-ink-guard><a href="#fallstudien">Alle Fallstudien <span aria-hidden="true">→</span></a></div>`;
         window.scrollTo({top:0,behavior:'instant'});
         if(!initial)document.getElementById('case-title').focus({preventScroll:true});
       }
@@ -53,7 +56,7 @@
       document.title=selected.shortTitle+' · Hannah Reber';
     } else {
       shownCase=null;home.hidden=false;caseView.hidden=true;
-      document.title='Hannah Reber · Digitale Strategie & Teamführung';
+      document.title=homeTitle;
       if(wasCase || parts[0]==='projekte'||parts[0]==='lebenslauf' || ['start','arbeitsweise','fallstudien','skills','technical-background','werdegang','kontakt'].includes(hash)) {
         const isTechnicalLink=hash==='skills'||hash==='technical-background';
         const target=document.getElementById(isTechnicalLink?'technical-background':parts[0]==='projekte'?'fallstudien':parts[0]==='lebenslauf'?'werdegang':hash) || document.getElementById('start');
@@ -97,7 +100,7 @@
   const toggle=document.getElementById('motion-toggle');
   const reduced=matchMedia('(prefers-reduced-motion: reduce)');
   const fine=matchMedia('(hover: hover) and (pointer: fine)');
-  const readingEffect=()=>['wolken','fokus','atem','horizont','randlicht'].includes(document.documentElement.dataset.effect);
+  const readingEffect=()=>['wolken','fokus','atem','horizont','randlicht','reading-lab','reading-accents'].includes(document.documentElement.dataset.effect);
   let enabled=readingEffect() || !reduced.matches;
   let particles=[];
   let guards=[];

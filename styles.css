@@ -132,6 +132,14 @@ main, .site-footer, .noscript-note { position: relative; z-index: 1; }
   font-size: 20px;
   line-height: 1.65;
 }
+.hero-context {
+  margin-top: 20px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--muted);
+  max-width: 440px;
+}
+.hero-context strong { color: var(--ink); font-weight: 600; }
 .intro-link {
   display: inline-flex;
   align-items: center;
@@ -188,6 +196,8 @@ main, .site-footer, .noscript-note { position: relative; z-index: 1; }
   line-height: 1.5;
 }
 .project-link .project-name { margin-top: 8px; font-size: 14px; }
+.project-link .project-outcome { font-size: 15px; line-height: 1.65; }
+.project-outcome > span { font-weight: 600; }
 .case-heading .project-name { margin-top: 12px; font-size: 15px; }
 .read-link {
   display: inline-flex;
@@ -255,12 +265,16 @@ details[open] > summary .disclosure-sign::after { display: none; }
 .qualification-list li + li { margin-top: 23px; }
 .qualification-list strong { font-weight: 600; }
 .qualification-list span { color: var(--muted); font-size: 15px; }
+.qualification-source { display: inline-block; margin-top: 10px; font-size: 14px; color: var(--accent); }
+.qualification-list .qualification-source { align-self: flex-start; margin-top: 4px; }
 .technical-content { padding: 0 30px 28px 0; }
 .technical-group + .technical-group { margin-top: 24px; }
 .technical-group h4 { margin-bottom: 6px; font-size: 16px; }
 .technical-group p { font-size: 16px; line-height: 1.75; }
 
 .contact-section { padding-top: 90px; padding-bottom: 140px; }
+/* Navigation leaves 18px above the heading; section spacing stays generous. */
+#kontakt { scroll-margin-top: -72px; }
 .contact-section h2 { margin-bottom: 26px; }
 .email-link {
   display: inline-flex;
@@ -296,6 +310,11 @@ details[open] > summary .disclosure-sign::after { display: none; }
   overflow-wrap: break-word;
 }
 .case-lede { margin-top: 28px; font-size: 20px; line-height: 1.7; }
+.case-facts { margin: 30px 0 0; padding: 20px 0; border-block: 1px solid var(--line); font-size: 16px; line-height: 1.6; }
+.case-facts > div { display: grid; grid-template-columns: 115px minmax(0,1fr); gap: 20px; }
+.case-facts > div + div { margin-top: 10px; }
+.case-facts dt { color: var(--muted); }
+.case-facts dd { margin: 0; }
 .case-section { margin-top: 44px; }
 .case-section h2 { margin-bottom: 16px; font-size: 25px; line-height: 1.4; letter-spacing: -0.02em; }
 .case-section p + p { margin-top: 18px; }
@@ -355,6 +374,7 @@ details[open] > summary .disclosure-sign::after { display: none; }
   .role-line { margin-bottom: 10px; font-size: 14px; }
   .hero h1 { font-size: clamp(32px, 8.8vw, 43px); line-height: 1.16; letter-spacing: -0.045em; }
   .hero-description { margin-top: 19px; font-size: 18px; line-height: 1.65; }
+  .hero-context { font-size: 14px; margin-top: 17px; }
   .intro-link { margin-top: 24px; font-size: 16px; }
   .reading-column { width: calc(100% - 40px); }
   .story-section { padding-block: 58px; }
@@ -378,6 +398,7 @@ details[open] > summary .disclosure-sign::after { display: none; }
   .background-details:first-of-type { margin-top: 27px; }
   .qualification-list, .technical-content { padding-right: 14px; }
   .contact-section { padding-top: 64px; padding-bottom: 90px; }
+  #kontakt { scroll-margin-top: -46px; }
   .contact-section h2 { margin-bottom: 20px; }
   .contact-section p { font-size: 17px; }
   .email-link { margin-top: 23px; font-size: 20px; }
@@ -385,6 +406,8 @@ details[open] > summary .disclosure-sign::after { display: none; }
   .back-link { margin-bottom: 37px; font-size: 14px; }
   .case-heading h1 { font-size: 31px; line-height: 1.27; }
   .case-lede { margin-top: 22px; font-size: 18px; }
+  .case-facts { margin-top: 24px; font-size: 15px; }
+  .case-facts > div { grid-template-columns: 84px minmax(0,1fr); gap: 14px; }
   .case-section { margin-top: 35px; font-size: 17px; }
   .case-section h2 { font-size: 23px; margin-bottom: 13px; }
   .case-role { margin-top: 32px; padding-top: 23px; }

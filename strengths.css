@@ -7,10 +7,15 @@
 .strength-row {
   display: grid;
   grid-template-columns: 44% minmax(0, 1fr);
-  gap: 32px;
+  gap: 16px;
   align-items: start;
 }
 
+/* Give the explanations more room without widening every reading section. */
+@media screen and (min-width: 761px) {
+  #arbeitsweise > .reading-column { --reading: 840px; }
+  #arbeitsweise .strength-row { grid-template-columns: 316px minmax(0, 1fr); }
+}
 .strength-row h3 {
   font-size: 25px;
   line-height: 1.38;

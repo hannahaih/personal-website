@@ -4,7 +4,7 @@
   align-items: flex-end;
   gap: 20px;
   width: 100%;
-  margin: 48px 0 0;
+  margin: 80px 0 0;
 }
 .dog-portrait-button {
   display: block;
@@ -31,6 +31,7 @@
   text-align: right;
 }
 #dog-quote { width: 100%; overflow-wrap: normal; word-break: normal; hyphens: none; }
+#dog-quote, .dog-quote-sizer > span { white-space: pre-line; text-wrap: pretty; }
 .dog-quote-frame { display: grid; width: 100%; min-width: 0; }
 .dog-quote-frame > #dog-quote,
 .dog-quote-sizer { grid-area: 1 / 1; min-width: 0; }

@@ -1,0 +1,290 @@
+/* Shared reading accents: words remain visible while decoration appears once. */
+html:is([data-reading-lab], [data-reading-accents]) #pointer-colour { display: none !important; }
+html:is([data-reading-lab], [data-reading-accents]) .text-marker {
+  position: relative;
+  isolation: auto;
+  z-index: auto;
+  display: inline-block;
+  max-width: 100%;
+  padding: 0 .1em;
+  margin-inline: -.1em;
+  vertical-align: baseline;
+  font-weight: 600;
+  color: var(--ink) !important;
+  -webkit-text-fill-color: currentColor !important;
+  background: none !important;
+  box-shadow: none !important;
+  border-radius: 0;
+  transition: none !important;
+  --marker-progress: 0% !important;
+}
+html:is([data-reading-lab], [data-reading-accents]) .calm-zone,
+html:is([data-reading-lab], [data-reading-accents]) .text-marker[data-calm-tone="neutral"] {
+  position: relative;
+  --calm-accent: #8074bd;
+  --calm-paper: #e9e5ff;
+  --calm-rgb: 128, 116, 189;
+  --paint-companion: #cfceff;
+  --paint-pigment: #a88aee;
+}
+/* Paint stays behind every letter in its paragraph, including adjacent words. */
+html:is([data-reading-lab], [data-reading-accents]) .calm-zone { isolation: isolate; }
+/* Each selected phrase carries its topic across sections and projects. */
+html[data-calm-palette="strengths"] [data-calm-tone="communication"] {
+  --calm-accent: #9665cd; --calm-paper: #e8dcff; --calm-rgb: 150, 101, 205;
+  --paint-companion: #d9c3ff;
+  --paint-pigment: #b381ef;
+}
+html[data-calm-palette="strengths"] [data-calm-tone="creativity"] {
+  --calm-accent: #cb64a0; --calm-paper: #fbddf0; --calm-rgb: 203, 100, 160;
+  --paint-companion: #ffbde4;
+  --paint-pigment: #ef85bd;
+}
+html[data-calm-palette="strengths"] [data-calm-tone="strategy"] {
+  --calm-accent: #508fca; --calm-paper: #d9edff; --calm-rgb: 80, 143, 202;
+  --paint-companion: #aacfff;
+  --paint-pigment: #79b5ed;
+}
+html[data-calm-palette="strengths"] [data-calm-tone="leadership"] {
+  --calm-accent: #3b9c84; --calm-paper: #d6f3e3; --calm-rgb: 59, 156, 132;
+  --paint-companion: #aaeacc;
+  --paint-pigment: #70d0a4;
+}
+.calm-drawing {
+  position: absolute;
+  pointer-events: none;
+  display: none;
+  overflow: visible;
+  color: var(--calm-accent);
+  z-index: -1;
+}
+.calm-drawing path {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  transition: stroke-dashoffset 1450ms cubic-bezier(.35,.12,.2,1);
+}
+.calm-seen .calm-drawing path { stroke-dashoffset: 0; }
+.calm-oval { inset: -.06em -.30em; width: calc(100% + .6em); height: calc(100% + .12em); }
+.calm-oval path { stroke-width: 1.4; }
+.calm-rule { left: 0; bottom: .02em; width: 100%; height: 7px; }
+.calm-rule path { stroke-width: 3; opacity: .8; }
+.calm-felt {
+  left: -.02em;
+  bottom: -.01em;
+  width: calc(100% + .04em);
+  height: 10px;
+  clip-path: inset(-50% 100% -50% -5%);
+  transition: clip-path 1450ms cubic-bezier(.35,.12,.2,1);
+}
+.calm-felt path {
+  stroke-width: 3.8;
+  opacity: .85;
+  stroke-dasharray: none;
+  stroke-dashoffset: 0;
+  transition: none;
+}
+.calm-seen .calm-felt { clip-path: inset(-50% -5% -50% -5%); }
+.calm-felt path:nth-child(2) { stroke-width: 1.4; opacity: .3; }
+html[data-calm-effect="kreis"] .calm-oval,
+html[data-calm-effect="linie"] .calm-rule,
+html[data-calm-effect="filz"] .calm-felt { display: block; }
+
+/* Two different painted surfaces, drawn once without moving the glyphs. */
+.calm-brush { inset: -.22em -.30em; width: calc(100% + .60em); height: calc(100% + .44em); }
+.calm-watercolour { inset: -.24em -.35em; width: calc(100% + .70em); height: calc(100% + .48em); filter: blur(.5px); }
+.calm-brush path, .calm-watercolour path {
+  fill: var(--calm-paper);
+  stroke: none;
+  stroke-dasharray: none;
+  transition: none;
+}
+.calm-brush path:nth-child(n+2) { opacity: .55; }
+.calm-brush path:nth-child(4) {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 1;
+  opacity: .7;
+}
+.calm-watercolour path:nth-child(1) { opacity: .85; }
+.calm-watercolour path:nth-child(2) { opacity: .35; }
+.calm-watercolour path:nth-child(3) { fill: var(--calm-accent); opacity: .08; }
+html[data-calm-effect="brush"] .calm-brush,
+html[data-calm-effect="aquarell"] .calm-watercolour { display: block; }
+.calm-brush {
+  clip-path: inset(-10% 100% -10% -10%);
+  transition: clip-path 1450ms cubic-bezier(.35,.12,.2,1);
+}
+.calm-seen .calm-brush { clip-path: inset(-10% -10% -10% -10%); }
+.calm-watercolour {
+  opacity: 0;
+  transition: opacity 1450ms ease-out;
+}
+.calm-seen .calm-watercolour { opacity: 1; }
+
+/* New reference studies use their own textured SVG surfaces, never the text. */
+.calm-paint {
+  inset: -.24em -.60em;
+  width: calc(100% + 1.20em);
+  height: calc(100% + .48em);
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 1450ms ease-out;
+}
+.calm-seen .calm-paint { opacity: 1; }
+.calm-paint-verlauf,
+.calm-paint-schichten {
+  clip-path: inset(-10% 100% -10% -10%);
+  transition: opacity 450ms ease-out, clip-path 1450ms cubic-bezier(.35,.12,.2,1);
+}
+.calm-seen .calm-paint-verlauf,
+.calm-seen .calm-paint-schichten { clip-path: inset(-10% -10% -10% -10%); }
+html[data-calm-effect="verlauf"] .calm-paint-verlauf,
+html[data-calm-effect="klecks"] .calm-paint-klecks,
+html[data-calm-effect="schichten"] .calm-paint-schichten,
+html[data-calm-effect="pigment"] .calm-paint-pigment,
+html[data-calm-effect="farbsaum"] .calm-paint-farbsaum { display: block; }
+
+/* Underlays cannot change the colour, opacity or position of the lettering. */
+html:is([data-reading-lab], [data-reading-accents]) .text-marker::before,
+html:is([data-reading-lab], [data-reading-accents]) .text-marker::after {
+  content: none;
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+}
+html[data-calm-effect="papier"] .text-marker::before {
+  content: '';
+  inset: .17em -.10em .13em;
+  background: var(--calm-paper);
+  clip-path: polygon(0 9%, 100% 3%, 99% 92%, 1% 98%);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1450ms cubic-bezier(.35,.12,.2,1);
+}
+html[data-calm-effect="papier"] .calm-seen .text-marker::before { transform: scaleX(1); }
+
+/* A fixed pale reading surface with a small colour shift inside it. No loop. */
+html[data-calm-effect="licht"] .text-marker::before {
+  content: '';
+  inset: .12em -.12em .09em;
+  border-radius: .35em;
+  background: #f7f5fc;
+  opacity: 0;
+  transition: opacity 1100ms ease-out;
+}
+html[data-calm-effect="licht"] .text-marker::after {
+  content: '';
+  inset: .12em -.12em .09em;
+  border-radius: .35em;
+  background-image: radial-gradient(ellipse at 30% 40%, rgba(var(--calm-rgb),.15), transparent 65%),
+    radial-gradient(ellipse at 76% 65%, rgba(var(--calm-rgb),.09), transparent 60%);
+  background-size: calc(100% + 12px) calc(100% + 12px);
+  background-position: calc(50% + var(--light-x, 0px)) calc(50% + var(--light-y, 0px));
+  opacity: 0;
+  transition: opacity 1100ms ease-out, background-position 1100ms ease-out;
+}
+html[data-calm-effect="licht"] .calm-seen .text-marker::before,
+html[data-calm-effect="licht"] .calm-seen .text-marker::after { opacity: 1; }
+
+/* Neon lights the decoration, while dark lettering stays crisp on white. */
+html[data-calm-effect="neon"] .calm-zone,
+html[data-calm-effect="neon"] .text-marker[data-calm-tone="neutral"] { --neon-rgb: 176, 112, 247; }
+html[data-calm-effect="neon"][data-calm-palette="strengths"] [data-calm-tone="communication"] { --neon-rgb: 177, 100, 249; }
+html[data-calm-effect="neon"][data-calm-palette="strengths"] [data-calm-tone="creativity"] { --neon-rgb: 246, 109, 190; }
+html[data-calm-effect="neon"][data-calm-palette="strengths"] [data-calm-tone="strategy"] { --neon-rgb: 74, 169, 246; }
+html[data-calm-effect="neon"][data-calm-palette="strengths"] [data-calm-tone="leadership"] { --neon-rgb: 56, 210, 164; }
+html[data-calm-effect="neon"] .text-marker::before {
+  content: '';
+  left: -.04em;
+  right: -.04em;
+  bottom: .03em;
+  height: 3px;
+  border: 1px solid rgba(var(--neon-rgb), .85);
+  border-radius: 99px;
+  background: #fff;
+  box-shadow: 0 0 3px rgba(var(--neon-rgb), .9),
+    0 0 8px rgba(var(--neon-rgb), .65),
+    0 0 16px rgba(var(--neon-rgb), .3);
+  opacity: 0;
+  transition: opacity 1450ms ease-out;
+}
+html[data-calm-effect="neon"] .text-marker::after {
+  content: '';
+  inset: .18em -.1em .08em;
+  background: linear-gradient(to top, rgba(var(--neon-rgb), .12), rgba(var(--neon-rgb), 0) 85%);
+  border-radius: .16em;
+  opacity: 0;
+  transition: opacity 1450ms ease-out;
+}
+html[data-calm-effect="neon"] .calm-seen .text-marker::before,
+html[data-calm-effect="neon"] .calm-seen .text-marker::after { opacity: 1; }
+
+html[data-calm-effect="rand"] .calm-zone::before {
+  content: '';
+  position: absolute;
+  left: -15px;
+  top: .30em;
+  width: 3px;
+  height: min(100% - .6em, 54px);
+  border-radius: 2px;
+  background: var(--calm-accent);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 1450ms cubic-bezier(.35,.12,.2,1);
+  pointer-events: none;
+}
+html[data-calm-effect="rand"] .calm-zone.calm-seen::before { transform: scaleY(1); }
+
+/* Headings orient the reader; one coloured proof supports each career entry.
+   A secondary keyword uses typography only, never an extra decoration. */
+html:is([data-reading-lab], [data-reading-accents]) .text-marker:not([data-calm-rank="primary"]) .calm-drawing,
+html:is([data-reading-lab], [data-reading-accents]) .text-marker:not([data-calm-rank="primary"])::before,
+html:is([data-reading-lab], [data-reading-accents]) .text-marker:not([data-calm-rank="primary"])::after { display: none !important; }
+html:is([data-reading-lab], [data-reading-accents]) .text-marker[data-calm-rank="plain"] {
+  font-weight: inherit;
+  padding: 0;
+  margin-inline: 0;
+  display: inline;
+  white-space: normal;
+}
+
+html[data-calm-motion="off"] .calm-drawing,
+html[data-calm-motion="off"] .calm-drawing path,
+html[data-calm-motion="off"] .text-marker::before,
+html[data-calm-motion="off"] .text-marker::after,
+html[data-calm-motion="off"] .calm-zone::before {
+  transition: none !important;
+}
+html[data-colour="off"] .calm-drawing { display: none !important; }
+html[data-colour="off"] .text-marker::before,
+html[data-colour="off"] .text-marker::after,
+html[data-colour="off"] .calm-zone::before { display: none !important; }
+@media (max-width: 760px) {
+  html:is([data-reading-lab], [data-reading-accents]) .text-marker { white-space: normal; }
+  .calm-paint { left: -.45em; right: -.45em; width: calc(100% + .90em); }
+  html[data-calm-effect="rand"] .calm-zone::before { left: -11px; width: 2px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .calm-drawing,
+  .calm-drawing path,
+  html:is([data-reading-lab], [data-reading-accents]) .text-marker::before,
+  html:is([data-reading-lab], [data-reading-accents]) .text-marker::after,
+  html:is([data-reading-lab], [data-reading-accents]) .calm-zone::before { transition: none !important; }
+}
+@media (forced-colors: active) {
+  .calm-drawing,
+  html:is([data-reading-lab], [data-reading-accents]) .text-marker::before,
+  html:is([data-reading-lab], [data-reading-accents]) .text-marker::after,
+  html:is([data-reading-lab], [data-reading-accents]) .calm-zone::before { display: none !important; }
+}
+@media print {
+  .reading-lab-controls, .calm-drawing,
+  html:is([data-reading-lab], [data-reading-accents]) .text-marker::before,
+  html:is([data-reading-lab], [data-reading-accents]) .text-marker::after,
+  html:is([data-reading-lab], [data-reading-accents]) .calm-zone::before { display: none !important; }
+}
