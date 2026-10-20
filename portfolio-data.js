@@ -4,16 +4,13 @@ window.HR_CASES = [
     "projectName": "Bestpreisfinder · Portfoliooptimierung",
     "title": "Umsatzpotenziale erkennen und Angebote optimieren",
     "shortTitle": "Umsatzpotenziale erkennen und Angebote optimieren",
-    "summary": "Ich erkannte ungenutztes Erlöspotenzial in der Kombination zertifizierter Weiterbildungsprodukte. Im Austausch mit den Fachbereichen erschloss ich die Geschäftslogik und entwickelte selbst Optimierungsalgorithmen für die erlösstärkste Angebotserstellung und wirtschaftlich sinnvolle Neuzertifizierungen.",
+    "summary": "Ich entdeckte neue Möglichkeiten zur Umsatzsteigerung im Vertrieb und im Kursangebot. Daraus entwickelte ich zwei Optimierungsprogramme, die im Arbeitsalltag eingesetzt wurden. Sie zeigten, welche Angebote mehr Umsatz bringen und welche neuen Produkte sich lohnen.",
     "summaryHighlights": [
-      "ungenutztes Erlöspotenzial",
-      "entwickelte selbst Optimierungsalgorithmen"
+      "neue Möglichkeiten zur Umsatzsteigerung"
     ],
     "role": "Ich erschloss die Geschäftslogik und entwickelte die Optimierungsprogramme selbst. Die spätere CRM-Anbindung entwickelten wir im Team weiter.",
-    "outcome": "Umsatzsteigerung durch Angebots- und Portfoliooptimierung · produktiv im Vertrieb und in Dynamics.",
-    "outcomeHighlights": [
-      "Umsatzsteigerung"
-    ],
+    "outcome": "rund 6 % mehr Umsatz durch Angebots- und Portfoliooptimierung.",
+    "outcomeHighlights": [],
     "facts": [
       {
         "label": "Meine Rolle",
@@ -21,48 +18,58 @@ window.HR_CASES = [
       },
       {
         "label": "Technik",
-        "value": "Python, PuLP"
+        "value": "Python, PuLP, Streamlit"
       },
       {
         "label": "Integration",
-        "value": "Matrix, Zoho und Microsoft Dynamics"
+        "value": "Matrix42 (ESM), Zoho und Microsoft Dynamics"
       },
       {
         "label": "Einsatz",
-        "value": "Produktiv in der Angebotserstellung"
+        "value": "Standard in der Angebotserstellung"
       }
     ],
     "sections": [
       {
-        "title": "Unterschiedliche Erlöse für dieselben Kurse erkennen",
-        "text": "Mit dem Auftrag, wirtschaftliche Potenziale zu finden, erschloss ich mir im Dialog mit den Fachbereichen die Geschäftsregeln. Bei karriere tutor wurden interne Kurse zu zertifizierten Produkten gebündelt; nur diese konnten verkauft werden. Jedes Produkt hatte eine eigene Zertifizierung und einen eigenen Kostensatz. Deshalb konnten dieselben gewünschten Kurse je nach Produktzusammenstellung unterschiedliche Erlöse erzielen. Ich erkannte darin ein bislang ungenutztes Geschäftspotenzial.",
+        "title": "Wirtschaftliche Potenziale erkennen",
+        "text": "Bei karriere tutor, einem Anbieter beruflicher Weiterbildung, stellte der Vertrieb aus den gewünschten Kursen individuelle Angebote zusammen. Dabei mussten bestehende Preis- und Zertifizierungsvorgaben berücksichtigt werden. Im Austausch mit den Fachbereichen erkannte ich, dass sich durch gezielte Kombinationen mehr Umsatz erzielen ließ. Daraus entwickelte ich zwei Optimierungsprogramme.",
         "highlights": [
-          "unterschiedliche Erlöse",
-          "ungenutztes Geschäftspotenzial"
+          "durch gezielte Kombinationen mehr Umsatz"
         ]
       },
       {
-        "title": "Die erlösstärkste zulässige Produktkombination berechnen",
-        "text": "Ich untersuchte die Preis- und Zertifizierungslogik und entwickelte selbst einen Optimierer mit Python und PuLP. Jeder gewünschte Kurs musste genau einmal durch die ausgewählten Produkte abgedeckt werden. Unter diesen Bedingungen ermittelte das Programm die zulässige Zusammenstellung mit dem höchsten Gesamterlös. Sales erhielt damit eine konkrete Empfehlung für die Angebotserstellung und nutzte die Anwendung produktiv.",
+        "title": "Geschäftsregeln in Software übersetzen",
+        "text": "Eine manuelle Optimierung war angesichts der kombinatorischen Komplexität ausgeschlossen. Ich übersetzte die Geschäftsregeln in ein kombinatorisches Optimierungsmodell und entwickelte selbst eine Anwendung mit Python und PuLP, die automatisch die wirtschaftlich beste zulässige Zusammenstellung berechnete.",
         "highlights": [
-          "entwickelte selbst einen Optimierer",
-          "höchsten Gesamterlös"
+          "kombinatorisches Optimierungsmodell"
         ]
       },
       {
-        "title": "Empfehlungen für neue Zertifizierungen ableiten",
-        "text": "Ich übertrug die wirtschaftliche Frage auf das Portfolio: Welche zusätzlichen Produkte sollten neu zertifiziert werden? Ein zweites Programm untersuchte tatsächlich verkaufte Kurskombinationen und die Kostensatzlogik und identifizierte wirtschaftlich interessante Kombinationen. Mögliche Mehrerlöse mussten gegen Aufwand und Kosten einer Zertifizierung abgewogen werden. So entstanden Empfehlungen für Neuzertifizierungen und eine Grundlage für strategische Portfolioentscheidungen.",
+        "title": "Das Produktportfolio weiterentwickeln",
+        "text": "Mein zweites Programm lieferte konkrete Empfehlungen zur Portfolioerweiterung. Mit mathematischer Optimierung ermittelte es die wirtschaftlich besten Varianten in einem enormen Raum möglicher Zusammenstellungen. Die Empfehlungen halfen zu entscheiden, welche Erweiterungen des Angebots den Aufwand und die Kosten rechtfertigten.",
         "highlights": [
-          "wirtschaftlich interessante Kombinationen",
-          "Empfehlungen für Neuzertifizierungen"
+          "konkrete Empfehlungen zur Portfolioerweiterung"
         ]
       },
       {
-        "title": "Die Anwendung in Zoho und Dynamics integrieren",
-        "text": "Die Anwendung arbeitete mit aktuellen Betriebsdaten aus Matrix und war zunächst an Zoho angebunden. Beim Wechsel zu Microsoft Dynamics entwickelten wir sie im Team für den neuen Ablauf weiter: Sales konnte sie aus dem CRM öffnen und Ergebnisse direkt zurückschreiben lassen. So blieb die Optimierung in den Ablauf der Angebotserstellung eingebunden; das zweite Werkzeug unterstützte Entscheidungen über Neuzertifizierungen.",
+        "title": "Die Angebotserstellung automatisieren",
+        "text": "Die Anwendung zur Angebotsoptimierung nutzte aktuelle Daten aus Matrix42 und war an Zoho angebunden. Sales wählte die gewünschten Kurse über eine Streamlit-Oberfläche aus. Die berechneten Ergebnisse wurden automatisch in die ausgestellten Angebote übernommen. Dieser Ablauf wurde zum verbindlichen Standard im Vertrieb.",
         "highlights": [
-          "aus dem CRM öffnen",
-          "Ergebnisse direkt zurückschreiben"
+          "verbindlichen Standard im Vertrieb"
+        ]
+      },
+      {
+        "title": "Beim CRM-Wechsel die Funktionalität erhalten",
+        "text": "Beim Wechsel zu Microsoft Dynamics erfüllte eine zunächst vorgesehene CRM-interne Lösung die Anforderungen an Berechnung und Nutzung nicht. Im Team entwickelten wir die Anwendung für Dynamics weiter. Sales konnte sie aus dem CRM öffnen und die Ergebnisse direkt zurückschreiben lassen.",
+        "highlights": [
+          "entwickelten wir die Anwendung für Dynamics weiter"
+        ]
+      },
+      {
+        "title": "Die wirtschaftliche Wirkung",
+        "text": "Die beiden Programme zur Angebots- und Portfoliooptimierung führten zusammen zu rund 6 % mehr Umsatz.",
+        "highlights": [
+          "rund 6 % mehr Umsatz"
         ]
       }
     ],
@@ -73,16 +80,13 @@ window.HR_CASES = [
     "projectName": "ContentGen",
     "title": "KI-gestützte Materialproduktion konzipieren und leiten",
     "shortTitle": "KI-gestützte Materialproduktion konzipieren und leiten",
-    "summary": "Ich konzipierte eine Plattform für die LLM- und RAG-gestützte Materialerstellung: Folien, Handouts, interaktive Lernstrecken und Tests für ganze Weiterbildungskurse. Ich entwarf die Architektur, leitete fünf Entwickler und gestaltete die Einführung mit den Dozierenden.",
+    "summary": "Ich erkannte, wie sich die Kursproduktion beschleunigen und skalieren lässt. Dafür konzipierte ich eine Plattform, die zentrale Materialverwaltung mit generativer KI und einem eigenen RAG-System verbindet. Ich baute ein Entwicklungsteam auf und brachte das Projekt in wenigen Monaten vom Konzept zum Pilot.",
     "summaryHighlights": [
-      "LLM- und RAG-gestützte Materialerstellung",
-      "leitete fünf Entwickler"
+      "Kursproduktion beschleunigen und skalieren"
     ],
-    "role": "Ich verantwortete Gesamtkonzept und Architektur, führte fünf Entwickler und bezog die Dozierenden in die Entwicklung ein.",
-    "outcome": "Vollständige Plattformarchitektur · erste Kursmaterialien produziert · Umsetzung im Pilot.",
-    "outcomeHighlights": [
-      "Vollständige Plattformarchitektur"
-    ],
+    "role": "Ich verantwortete Gesamtkonzept und Architektur, führte fünf Entwicklerinnen und Entwickler und bezog die Dozierenden in die Entwicklung ein.",
+    "outcome": "Erste Kurse im Pilot in einem Drittel der bisherigen Zeit produziert, einschließlich der fachlichen Prüfung durch Dozierende.",
+    "outcomeHighlights": [],
     "facts": [
       {
         "label": "Meine Rolle",
@@ -90,7 +94,7 @@ window.HR_CASES = [
       },
       {
         "label": "Team",
-        "value": "Fünf Entwickler"
+        "value": "Fünf Entwicklerinnen und Entwickler"
       },
       {
         "label": "Technik",
@@ -103,59 +107,66 @@ window.HR_CASES = [
     ],
     "sections": [
       {
-        "title": "Aus Materialerstellung eine gemeinsame Plattform entwickeln",
-        "text": "Ausgangspunkt war die KI-gestützte Erstellung und Aktualisierung von Unterrichtsmaterialien ganzer Kurse. LLMs und ein eigenes RAG-System sollten Fachliteratur und Kursvorgaben in Folien, Handouts, interaktive Lernstrecken und Tests überführen. Im Arbeitsalltag erkannte ich einen größeren Bedarf: Unterlagen lagen auf einzelnen Rechnern oder in verschiedenen SharePoint-Ablagen. Bei Vertretungen und Übergaben war oft unklar, welche Version aktuell war und wie damit unterrichtet werden sollte. Ich erweiterte die Materialproduktion deshalb zu einer gemeinsamen Plattform und entwarf die vollständige Architektur.",
+        "title": "Geschäftliche Potenziale erkennen",
+        "text": "Bei karriere tutor erkannte ich, wie sich die Kursproduktion beschleunigen und skalieren lässt. Die Erstellung und Überarbeitung von Kursen war zeit- und kostenintensiv. Verstreute, uneinheitliche Materialien erschwerten außerdem Aktualisierungen, Vertretungen und Übergaben. Ich konzipierte eine Plattform, die generative KI mit einer gemeinsamen Infrastruktur für Unterrichtsmaterialien verband. Damit sollten neue Weiterbildungsangebote schneller entwickelt und erprobt werden können.",
         "highlights": [
-          "Unterrichtsmaterialien ganzer Kurse",
+          "Kursproduktion beschleunigen und skalieren"
+        ]
+      },
+      {
+        "title": "Ein Entwicklungsteam aufbauen und führen",
+        "text": "Ich baute ein Entwicklungsteam auf und führte fünf Entwicklerinnen und Entwickler. Ich verantwortete Gesamtkonzept, Architektur sowie die Entscheidungen zu Entwicklung und Qualität. Die Programmierung erfolgte im Team. Gemeinsam brachten wir das Projekt in wenigen Monaten vom Konzept zum Pilot.",
+        "highlights": [
+          "führte fünf Entwicklerinnen und Entwickler"
+        ]
+      },
+      {
+        "title": "Die vollständige KI-Architektur entwerfen",
+        "text": "Ich entwarf die vollständige Architektur für die Erstellung und Aktualisierung ganzer Kursmaterialien. Mehrstufige LLM-Workflows verarbeiteten Angaben wie Thema, Dauer und Zielgruppe und erzeugten Folien, Handouts, interaktive Lernstrecken und Tests. Ein eigenes RAG-System stellte passende Inhalte aus Fachliteratur bereit. Für unterschiedlich strukturierte Texte, Bilder und Tabellen verglichen wir Verfahren zur Aufbereitung und Aufteilung in sinnvolle Abschnitte. Die Lizenzverhandlungen mit den Verlagen führte ich selbst.",
+        "highlights": [
           "vollständige Architektur"
         ]
       },
       {
-        "title": "Rollen, Versionen und Übergaben in einer Architektur verbinden",
-        "text": "Meine Architektur verband zentrale Ablage und Versionierung mit geregelten Rollen und Zugängen sowie gemeinsamen Standards für Aufbau und Überarbeitung. Einheitliche Strukturen und praktische Sprechernotizen sollten Material für Vertretungen schnell nutzbar machen. Der vorgesehene Workflow führte vorhandene Materialien aus einer Datenbank in die Plattform, unterstützte dort ihre Aktualisierung und Vereinheitlichung und führte sie anschließend in die Datenbank und das Lernmanagementsystem zurück.",
+        "title": "Materialien verlässlich nutzbar machen",
+        "text": "Für die zentrale Materialverwaltung entwarf ich Rollen, Zugänge, Versionierung und gemeinsame Standards. Der Architekturentwurf sah einen durchgängigen Ablauf vor, der vorhandene Unterlagen aus einer Datenbank übernehmen, ihre Überarbeitung unterstützen und sie anschließend in Datenbank und Lernmanagementsystem zurückführen sollte. Einheitliche Strukturen und praktische Sprechernotizen waren für die schnelle Orientierung von Vertretungsdozierenden vorgesehen. In der Pilotanwendung konnten Dozierende Materialien ansehen, mit der KI überarbeiten, kommentieren und manuell bearbeiten. Auch der Export im Corporate Design war verfügbar.",
         "highlights": [
-          "zentrale Ablage und Versionierung",
-          "Material für Vertretungen"
+          "zentrale Materialverwaltung"
         ]
       },
       {
-        "title": "Entwicklung und fachliche Qualität steuern",
-        "text": "Ich führte fünf Entwickler und verantwortete die Entscheidungen zu Architektur und Qualität; die Programmierung erfolgte im Team. Mehrstufige KI-Workflows verbanden wir mit Vorschau, Kommentaren, direkter Bearbeitung und Export im Corporate Design. Für die Fachliteratur in unserem eigenen RAG-System führte ich Lizenzverhandlungen mit Verlagen. Mit Dozierenden definierten wir Referenzinhalte und prüften, ob das Retrieval diese fand. Weitere Tests untersuchten gezielt Ablenkungen und mehrdeutige Fachbegriffe. Eine mehrstufige Bewertung durch Sprachmodelle half, Quellen nach ihrer fachlichen Passung im jeweiligen Kontext auszuwählen.",
+        "title": "Vorbehalte in Produktanforderungen übersetzen",
+        "text": "In Einzelgesprächen untersuchte ich die Gründe für die Skepsis einiger Dozierender. Dahinter standen unter anderem Sorgen um zusätzliche Korrekturarbeit und den Verlust vertrauter Unterrichtsabläufe. Ich übersetzte diese Bedenken in konkrete Produktanforderungen. Wir ergänzten die zunächst rein semantische Quellensuche um Metadaten, sodass Kapitel, Seiten oder Beispiele gezielt vorgegeben werden konnten. Zusätzliche Fundstellen bewerteten wir gemeinsam. Einige Dozierende entdeckten dabei hilfreiche Ergänzungen. Mehr Beteiligung an Tests und die Nutzung der Anwendung machten die veränderte Haltung sichtbar.",
         "highlights": [
-          "führte fünf Entwickler",
-          "Lizenzverhandlungen mit Verlagen"
+          "konkrete Produktanforderungen"
         ]
       },
       {
-        "title": "Bildbeschreibungen auf den Lernzweck ausrichten",
-        "text": "Eine Frage nach einem Excel-Balkendiagramm führte im Test zu einem Vergleich der Ausgaben von Alice und Bob. Die Bildbeschreibung hatte die Beispieldaten im Screenshot erfasst, aber den Lernzweck der Abbildung verfehlt: einen Klickpfad in Excel zu erklären. Wir ergänzten deshalb eine vorgelagerte Kontextanalyse mit dem umgebenden Lehrbuchtext. Dieser Kontext steuerte anschließend den Prompt für eine strukturierte Bildbeschreibung. Die Beschreibung wurde in den Buchtext eingefügt und zusammen mit ihm für die Wissensbasis aufbereitet.",
+        "title": "Fachliche Qualität systematisch prüfen",
+        "text": "Für die fachliche Qualitätsprüfung definierten wir gemeinsam mit Dozierenden, welche Informationen bei ausgewählten Fragen gefunden werden mussten. Diese Referenzinhalte bildeten den Maßstab für unsere Retrieval-Tests. Wir prüften die Quellensuche gezielt mit schwer auffindbaren Inhalten, Ablenkungen und mehrdeutigen Fachbegriffen. Eine mehrstufige Bewertung durch Sprachmodelle untersuchte, wie gut die gefundenen Textabschnitte fachlich zur jeweiligen Frage passten. Bei den erzeugten Materialien analysierten wir außerdem, welche Kommentare, Korrekturen und weiteren Anweisungen der Dozierenden nötig waren.",
         "highlights": [
-          "Lernzweck der Abbildung",
-          "Kontextanalyse mit dem umgebenden Lehrbuchtext"
+          "fachliche Qualitätsprüfung"
         ]
       },
       {
-        "title": "Dozierenden Kontrolle über die Quellen geben",
-        "text": "Einige Dozierende sorgten sich um ihre bewährte Unterrichtsstruktur und ihren Einfluss auf die Inhalte. In Einzelgesprächen erkundete ich die Sorgen hinter den Vorbehalten. Ich ergänzte die zunächst rein semantische Quellensuche um Metadaten und gab ihnen damit Kontrolle über die Quellen: Kapitel, Seiten oder Beispiele konnten als primäre Quellen angegeben werden. So konnten die Dozierenden ihre fachlichen Entscheidungen beibehalten. Zusätzliche, thematisch gefundene Passagen bewerteten wir gemeinsam. Einige entdeckten dabei hilfreiche Ergänzungen; mehr Beteiligung an Tests und die Nutzung der Anwendung machten die veränderte Haltung sichtbar.",
+        "title": "Den Lernzweck von Abbildungen erhalten",
+        "text": "In einem Test sollte das System erklären, wie man in Excel ein Balkendiagramm erstellt. Die Antwort verglich jedoch die Ausgaben von Alice und Bob. Wir verfolgten den Fehler bis zur Bildbeschreibung zurück. Ein multimodales Modell hatte die Platzhalterdaten eines Screenshots beschrieben und den erklärten Bedienvorgang übersehen. Wir erweiterten die Verarbeitung um den umgebenden Lehrbuchtext, damit das Modell den Lernzweck der Abbildung erfassen konnte. Dieser Kontext floss in eine strukturierte Bildbeschreibung ein, die anschließend zusammen mit dem Buchtext für die Wissensbasis aufbereitet wurde.",
         "highlights": [
-          "Sorgen hinter den Vorbehalten",
-          "Kontrolle über die Quellen"
+          "Lernzweck der Abbildung"
         ]
       },
       {
-        "title": "Die vorhandene Pipeline für das neue Corporate Design nutzen",
-        "text": "Als das Unternehmen ein neues Corporate Design einführte, mussten auch Logo, Farben, Schriften und Vorlagen der Unterrichtsmaterialien angepasst werden. Die vorhandene Pipeline für Überarbeitung und Standardisierung ließ sich mit wenigen Anpassungen auf diesen Bedarf ausrichten. Die Architektur verband damit die laufende Materialpflege mit einer späteren Veränderung, die zu Beginn noch kein konkreter Anwendungsfall gewesen war.",
+        "title": "Die Architektur für weitere Aufgaben nutzen",
+        "text": "Als das Unternehmen sein Corporate Design umstellte, passten wir die vorhandene Überarbeitungspipeline mit wenigen Änderungen an die neuen Vorgaben für Logo, Farben, Schriften und Vorlagen an. Damit war die Pipeline auch für die Überführung bestehender Materialien ins neue Design vorbereitet.",
         "highlights": [
-          "neues Corporate Design",
-          "Überarbeitung und Standardisierung"
+          "vorhandene Überarbeitungspipeline"
         ]
       },
       {
-        "title": "Ausgearbeitete Architektur und erste Pilotmaterialien",
-        "text": "Die Architektur war vollständig ausgearbeitet; erste Kursmaterialien waren produziert. Bei meinem Ausscheiden befand sich die Umsetzung einschließlich Datenbank- und LMS-Rückführung noch im Pilot. Die neuen Kurse waren noch nicht im Unterricht eingesetzt.",
+        "title": "Den Nutzen im Pilot sichtbar machen",
+        "text": "Erste Kurse wurden im Pilot in einem Drittel der bisherigen Zeit produziert. Die fachliche Prüfung durch Dozierende war darin bereits enthalten. Die Architektur war vollständig ausgearbeitet. Bei meinem Ausscheiden befand sich die Umsetzung einschließlich Datenbank- und LMS-Rückführung im Pilot.",
         "highlights": [
-          "Architektur war vollständig ausgearbeitet",
-          "erste Kursmaterialien waren produziert"
+          "einem Drittel der bisherigen Zeit"
         ]
       }
     ],
@@ -166,12 +177,10 @@ window.HR_CASES = [
     "projectName": "TutorBots",
     "title": "Kursspezifische KI-Chatbots als Lernhilfe einführen",
     "shortTitle": "Kursspezifische KI-Chatbots als Lernhilfe einführen",
-    "summary": "Ich leitete die Entwicklung kursspezifischer RAG-Chatbots, die Fragen mit Fachliteratur und Kursunterlagen beantworten und beim Lernen begleiten, statt Lösungen vorzugeben. Die Bots wurden in Microsoft Teams integriert und unterstützen auch Fragen in der Muttersprache. Für die Einführung setzte ich auf gestaffelte Piloten, Feedback und Verbesserungen.",
+    "summary": "Ich leitete die Entwicklung und Einführung kursspezifischer KI-Chatbots als Lernhilfe. Sie beantworten Fragen auf Grundlage von Fachliteratur und Kursunterlagen. Ich verantwortete die technische und didaktische Konzeption, plante Tests und die schrittweise Einführung und gewann Dozierende trotz anfänglicher Vorbehalte für die fachliche Prüfung und Weiterentwicklung.",
     "role": "Ich leitete das Projekt, entwickelte die Einführungsstrategie und verband technische Umsetzung mit fachlicher Prüfung durch die Dozierenden.",
-    "outcome": "Kursspezifische Chatbots für 20 Kurse produktiv in Microsoft Teams.",
-    "outcomeHighlights": [
-      "20 Kurse produktiv"
-    ],
+    "outcome": "Chatbots für über 30 Kurse produktiv in Microsoft Teams eingeführt.",
+    "outcomeHighlights": [],
     "facts": [
       {
         "label": "Meine Rolle",
@@ -187,58 +196,74 @@ window.HR_CASES = [
       },
       {
         "label": "Einsatz",
-        "value": "Produktiv für 20 Kurse"
+        "value": "Produktiv für über 30 Kurse"
       }
     ],
     "sections": [
       {
-        "title": "Lernhilfe in der gewohnten Kursumgebung anbieten",
-        "text": "Teilnehmende sollten Fragen zu ihrem Kurs stellen, Erklärungen übersetzen lassen und in ihrer Muttersprache nachfragen können. Die kursspezifischen Chatbots ergänzten menschliche Ansprechpersonen. Ein eigenes RAG-System machte Fachliteratur und Kursunterlagen für ihre Antworten verfügbar. Sie waren in Microsoft Teams erreichbar, wo der Unterricht bereits stattfand. Außerdem sollten sie didaktisch sinnvoll reagieren: Hinweise statt fertiger Lösungen geben und zum Weiterdenken anregen.",
+        "title": "Kursspezifische Lernhilfe anbieten",
+        "text": "Ich leitete die Entwicklung und Einführung kursspezifischer KI-Chatbots als Lernhilfe. Teilnehmende konnten Fragen zu den Inhalten ihres Kurses stellen, Erklärungen übersetzen lassen und in ihrer Muttersprache nachfragen. Die Bots ergänzten die menschlichen Ansprechpersonen. Ziele waren eine bessere Lernbegleitung, höhere Zufriedenheit und Abschlussquoten sowie eine Entlastung der Dozierenden.",
         "highlights": [
-          "kursspezifischen Chatbots",
-          "Hinweise statt fertiger Lösungen"
+          "kursspezifischer KI-Chatbots als Lernhilfe"
         ]
       },
       {
-        "title": "Einfache und anspruchsvolle Piloten parallel starten",
-        "text": "Ich entschied mich gegen einen gleichzeitigen Rollout aller Kurse. Wir gruppierten sie nach Fachgebiet und nach der Struktur ihrer Wissensquellen, etwa Literatur mit vielen Screenshots. Wir starteten einfache und anspruchsvolle Piloten parallel: jeweils einen repräsentativen Kurs aus einer Gruppe. So konnten erste Bots früh produktiv werden, während schwierige Fälle bereits bearbeitet wurden und später nicht weit zurückfallen sollten.",
+        "title": "Die technische Grundlage wiederverwenden",
+        "text": "Ich verantwortete die technische Konzeption und nutzte dafür die bereits vorhandene RAG-Basis aus der KI-gestützten Materialproduktion. Sie lief auf Google Cloud und Vertex AI und stellte passende Inhalte aus Fachliteratur und Kursunterlagen für die Antworten bereit. Mein Team setzte die Integration in Microsoft Teams um, wo der Unterricht bereits stattfand. Die Lernhilfe war dadurch in der gewohnten Kursumgebung erreichbar.",
+        "highlights": [
+          "bereits vorhandene RAG-Basis"
+        ]
+      },
+      {
+        "title": "Didaktisches Wissen in Anforderungen übersetzen",
+        "text": "Mit Dozierenden erarbeiteten wir didaktische Vorgaben für das Antwortverhalten. Wir besprachen, wie sie selbst auf Fragen von Teilnehmenden reagieren würden, und übersetzten ihre Vorgehensweisen in Anweisungen für die Bots. Passende Hinweise sollten Lernende beim eigenen Lösungsweg unterstützen und zum Weiterdenken anregen, ohne fertige Lösungen vorwegzunehmen. In den Tests prüften wir, wie die Bots diese Vorgaben umsetzten.",
+        "highlights": [
+          "didaktische Vorgaben für das Antwortverhalten"
+        ]
+      },
+      {
+        "title": "Dozierende für die Zusammenarbeit gewinnen",
+        "text": "Einige Dozierende begegneten dem Projekt mit Vorbehalten. In Gesprächen hörte ich zu, fragte nach und arbeitete heraus, welche fachlichen Einwände und Sorgen hinter der Skepsis standen. Dabei ging es auch um die eigene Rolle und den Umgang mit abweichenden Antworten von Bot und Dozierenden. Ich zeigte, wie die Bots auch die Dozierenden selbst unterstützen konnten, und gewann Dozierende für Tests und Weiterentwicklung. Ihre fachliche Einschätzung war wesentlich, um Qualitätsmaßstäbe festzulegen.",
+        "highlights": [
+          "gewann Dozierende für Tests und Weiterentwicklung"
+        ]
+      },
+      {
+        "title": "Die Einführung strategisch planen",
+        "text": "Ich entwickelte eine schrittweise Einführungsstrategie und startete einfache und anspruchsvolle Piloten parallel. Dafür gruppierten wir Kurse nach Fachgebiet und Struktur ihrer Materialien. Fachliteratur mit vielen Screenshots stellte beispielsweise andere Anforderungen an die Wissensaufbereitung. Aus den Gruppen wählten wir repräsentative Kurse für die ersten Piloten. So konnten erste Bots früh produktiv werden, während schwierige Fälle bereits Entwicklungszeit bekamen.",
         "highlights": [
           "einfache und anspruchsvolle Piloten parallel"
         ]
       },
       {
-        "title": "Antwortverhalten mit Dozierenden und Teilnehmenden prüfen",
-        "text": "Wir verwendeten die bereits für die Materialproduktion entwickelte RAG-Basis auf Google Cloud und Vertex AI; das Team setzte die Teams-Integration um. Mit Dozierenden besprachen wir, wie sie selbst auf Lernfragen antworten würden, und übersetzten das in didaktische Verhaltensvorgaben. Auf Tests und Verbesserungen folgten einzelne Kursdurchläufe mit echten Teilnehmenden. Die Chat-Auswertung mit Sprachmodellen half, Themen, mögliche Probleme und Signale von Zufriedenheit zu erkennen; Dozierende bewerteten Antworten und lieferten eigene zum Vergleich.",
+        "title": "Qualität anhand realer Nutzung prüfen",
+        "text": "Wir prüften die fachliche und didaktische Qualität in mehreren Stufen. Dozierende bewerteten Botantworten und beantworteten Lernfragen selbst, damit wir die Antworten vergleichen konnten. Nach Tests und Verbesserungen erprobten wir die Bots in einzelnen Kursdurchläufen mit echten Teilnehmenden. Sprachmodelle unterstützten die Chat-Auswertung und halfen, Themen, mögliche Probleme und Hinweise auf Zufriedenheit oder Unzufriedenheit zu erkennen. Die Ergebnisse flossen in weitere Verbesserungen ein.",
         "highlights": [
-          "didaktische Verhaltensvorgaben",
-          "Chat-Auswertung mit Sprachmodellen"
+          "fachliche und didaktische Qualität"
         ]
       },
       {
-        "title": "Lernassistenten für 20 Kurse in Produktion bringen",
-        "text": "Nach der Erprobung und weiteren Verbesserungen ging der jeweilige Bot in Produktion, während die Vorbereitung des nächsten bereits lief. Bei meinem Ausscheiden waren Chatbots für 20 Kurse produktiv. Meine Strategie verband technische Wiederverwendung mit fachlicher Prüfung und Lernen aus der Nutzung. Für eine belastbare Bewertung des Lernerfolgs war es noch zu früh.",
+        "title": "Über 30 Kurse produktiv versorgen",
+        "text": "Bei meinem Ausscheiden waren TutorBots für über 30 Kurse produktiv in Microsoft Teams verfügbar. Nach Erprobung und Verbesserungen wurde jeweils der nächste Bot eingeführt, während weitere Kurse bereits vorbereitet wurden. Teilnehmende konnten die zusätzliche Lernhilfe direkt in ihrer bestehenden Unterrichtsumgebung nutzen.",
         "highlights": [
-          "Chatbots für 20 Kurse produktiv"
+          "für über 30 Kurse produktiv"
         ]
       }
     ],
     "summaryHighlights": [
-      "kursspezifischer RAG-Chatbots",
-      "beim Lernen begleiten"
+      "kursspezifischer KI-Chatbots als Lernhilfe"
     ],
     "markerTone": "green"
   },
   {
     "id": "belegungsoptimierung",
     "projectName": "Belegungsoptimierung",
-    "title": "Kursauslastung und individuelle Lernpläne optimieren",
-    "shortTitle": "Kursauslastung und individuelle Lernpläne optimieren",
-    "summary": "Ich entwarf ein Optimierungsmodell für bessere Kursauslastung und lückenlose Lernpläne. Es berücksichtigt feste Kursstarts, fachliche Abhängigkeiten und persönliche Kurswünsche. Die Anforderungen klärte ich mit Betreuung, Fachbereichen und Sales; mein Team programmierte die Lösung. Ich priorisierte zunächst Neuanmeldungen und anschließend die Neuplanung bei Kursausfällen.",
+    "title": "Kursreihenfolgen und Auslastung optimieren",
+    "shortTitle": "Kursreihenfolgen und Auslastung optimieren",
+    "summary": "Ich konzipierte eine kombinatorische Planungsoptimierung für besser ausgelastete Kurse. Dafür vereinte ich wirtschaftliche Ziele, individuelle Kurswünsche und didaktische Anforderungen in einem Modell. Mit Sales und den Fachbereichen erarbeitete ich den passenden Ausgleich und leitete die Umsetzung durch mein Team.",
     "role": "Ich klärte die Anforderungen mit den Fachbereichen, entwarf Architektur und Bewertungssystem und priorisierte die Ausbaustufen. Die Programmierung übernahm mein Team.",
-    "outcome": "Planung für Neuanmeldungen und Kursausfälle umgesetzt.",
-    "outcomeHighlights": [
-      "Neuanmeldungen und Kursausfälle"
-    ],
+    "outcome": "durchschnittlich 23 % bessere Kursauslastung bei gleichbleibenden Verkaufsabschlüssen.",
+    "outcomeHighlights": [],
     "facts": [
       {
         "label": "Meine Rolle",
@@ -259,41 +284,57 @@ window.HR_CASES = [
     ],
     "sections": [
       {
-        "title": "Kursstarts, Auslastung und Abhängigkeiten modellieren",
-        "text": "Teilnehmende belegten individuelle Kurskombinationen mit unterschiedlichen Dauern und zyklischen Starts. Ihre Reihenfolge beeinflusste, wie gut Kurse ausgelastet waren. Das Ziel war bessere Kursauslastung: weniger Kurswochen mit unter sechs Teilnehmenden. Gleichzeitig mussten feste erste Starttermine, lückenlose Lernpläne und zwingende fachliche Abhängigkeiten eingehalten werden. Ich klärte diese Regeln im Dialog mit Teilnehmerbetreuung und Fachbereichen und entwarf die Architektur; mein Team setzte sie mit Google OR-Tools um.",
+        "title": "Das Potenzial besserer Kursplanung erkennen",
+        "text": "Bei karriere tutor belegten Teilnehmende individuelle Kurskombinationen mit unterschiedlichen Dauern und wiederkehrenden Startterminen. Ich erkannte, dass sich durch eine andere Reihenfolge der Kurse die vorhandenen Kursplätze besser auslasten ließen. Ziel war, schwach belegte Kursdurchläufe zu reduzieren und passende individuelle Kursreihenfolgen zu planen.",
         "highlights": [
-          "bessere Kursauslastung",
-          "lückenlose Lernpläne"
+          "Kursplätze besser auslasten"
         ]
       },
       {
-        "title": "Neuanmeldungen vor umfassender Bestandsoptimierung priorisieren",
-        "text": "Ich priorisierte zunächst die Planung für neue Teilnehmende vor ihrer Einbuchung. Anschließend ergänzten wir die Neuplanung bei Kursausfällen: Die Reihenfolgen aller Personen eines abgesagten Kursstarts konnten neu geplant werden. Eine regelmäßige Optimierung sämtlicher bereits gebuchter Teilnehmenden über alle Kurse hinweg war als weitere Stufe vorgesehen. So entstanden zwei Lösungen für konkrete Abläufe, bevor der umfassendste Anwendungsfall angegangen wurde.",
+        "title": "Betriebliche Anforderungen in Planungsregeln übersetzen",
+        "text": "Mit Teilnehmerbetreuung und Fachbereichen erarbeitete ich die Regeln für individuelle Kursreihenfolgen. Zu berücksichtigen waren der festgelegte Beginn einer Weiterbildung, lückenlose Kursfolgen sowie fachliche Abhängigkeiten und bevorzugte Reihenfolgen. Die Planung sollte wirtschaftliche Ziele erfüllen und eine didaktisch sinnvolle Abfolge ermöglichen. Diese Anforderungen bildeten die Grundlage für das Optimierungsmodell.",
         "highlights": [
-          "Planung für neue Teilnehmende",
-          "Neuplanung bei Kursausfällen"
+          "Regeln für individuelle Kursreihenfolgen"
         ]
       },
       {
-        "title": "Zwingende Regeln und Präferenzen getrennt bewerten",
-        "text": "Anfangs waren alle Regeln verbindlich; dadurch ließ sich manchmal keine zulässige Reihenfolge finden. Ich trennte deshalb verbindliche Regeln und Präferenzen: Einige Reihenfolgen mussten zwingend eingehalten werden, andere waren nur fachlich bevorzugt. Eine gewichtete Bewertung wog bessere Auslastung gegen Abweichungen von diesen weichen Regeln ab. Sales brachte einen weiteren Bedarf ein: Menschen auf Jobsuche wollten bestimmte Kurse früh absolvieren, falls sie die Weiterbildung für eine neue Stelle beendeten. Die Optimierung durfte erfolgreiche Verkaufsgespräche nicht behindern. Ich ergänzte deshalb Wunschpositionen für bevorzugte Kurse an den ersten drei Stellen; geringere Abstände zwischen gewünschter und tatsächlicher Position wurden besser bewertet.",
+        "title": "Verbindliche Bedingungen und Präferenzen unterscheiden",
+        "text": "Anfangs behandelten wir alle erfassten Regeln als verbindlich. Bei manchen Konstellationen fand die Optimierung dadurch keine zulässige Reihenfolge. Ich unterschied deshalb zwingende Bedingungen und Präferenzen und entwickelte eine gewichtete Bewertung. Sie wog bessere Auslastung gegen Abweichungen von bevorzugten Reihenfolgen ab. Dadurch erhielt die Optimierung mehr Spielraum, während verbindliche Bedingungen weiterhin eingehalten werden mussten.",
         "highlights": [
-          "verbindliche Regeln und Präferenzen",
-          "Wunschpositionen für bevorzugte Kurse"
+          "zwingende Bedingungen und Präferenzen"
         ]
       },
       {
-        "title": "Zwei Ausbaustufen umsetzen",
-        "text": "Die Lösung verband damit betriebliche Auslastung, fachliche Anforderungen und persönliche Kurswünsche, ohne jede Wunschreihenfolge zu garantieren. Die Planung für Neuanmeldungen und die Neuplanung bei Kursausfällen waren umgesetzt. Die regelmäßige globale Bestandsoptimierung wurde vor meinem Ausscheiden nicht mehr erreicht. Meine Aufgabe war, das Zielsystem anhand praktischer Rückmeldungen weiterzuentwickeln und die Umsetzung zu steuern.",
+        "title": "Kurswünsche und Vertriebsziele berücksichtigen",
+        "text": "Die freie Wahl der Kursreihenfolge war ein Verkaufsargument. Sales befürchtete, dass Einschränkungen Verkaufsabschlüsse kosten könnten. Manche Teilnehmende wollten bestimmte Kurse früh absolvieren, falls sie ihre Weiterbildung wegen einer neuen Stelle vorzeitig beendeten. Gemeinsam mit Sales erprobte ich den passenden Ausgleich und integrierte individuelle Kurswünsche in die Bewertung. Sales konnte bevorzugte Kurse für die ersten drei Positionen angeben. Je näher die berechnete Reihenfolge an diesen Wünschen lag, desto besser wurde sie bewertet.",
         "highlights": [
-          "betriebliche Auslastung",
-          "persönliche Kurswünsche"
+          "individuelle Kurswünsche in die Bewertung"
+        ]
+      },
+      {
+        "title": "Architektur und Umsetzung verantworten",
+        "text": "Ich konzipierte die kombinatorische Planungsoptimierung und entwarf Architektur und Bewertungssystem. Die Programmierung übernahm mein Team mit Google OR-Tools. Ich verantwortete die fachlichen und technischen Entscheidungen und entwickelte das Konzept anhand praktischer Rückmeldungen weiter. Die unterschiedlichen Anforderungen aus Vertrieb, Teilnehmerbetreuung und Fachbereichen flossen dabei in dasselbe Modell ein.",
+        "highlights": [
+          "kombinatorische Planungsoptimierung"
+        ]
+      },
+      {
+        "title": "Die Lösung schrittweise erweitern",
+        "text": "Ich priorisierte zunächst die Planung für neue Teilnehmende vor ihrer Einbuchung und dem Beginn der Weiterbildung. Anschließend erweiterten wir die Anwendung um die Neuplanung bei abgesagten Kursstarts. Die Reihenfolgen aller betroffenen Teilnehmenden konnten dadurch neu berechnet werden. Eine regelmäßige Optimierung sämtlicher bereits gebuchter Teilnehmenden über alle Kurse hinweg blieb als weitere Ausbaustufe vorgesehen.",
+        "highlights": [
+          "Planung für neue Teilnehmende"
+        ]
+      },
+      {
+        "title": "Die wirtschaftliche Wirkung",
+        "text": "Mit der Lösung erreichten wir durchschnittlich 23 % bessere Kursauslastung bei gleichbleibenden Verkaufsabschlüssen.",
+        "highlights": [
+          "durchschnittlich 23 % bessere Kursauslastung"
         ]
       }
     ],
     "summaryHighlights": [
-      "bessere Kursauslastung",
-      "persönliche Kurswünsche"
+      "kombinatorische Planungsoptimierung"
     ],
     "markerTone": "pink"
   }

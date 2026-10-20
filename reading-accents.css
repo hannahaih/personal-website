@@ -21,35 +21,15 @@ html:is([data-reading-lab], [data-reading-accents]) .text-marker {
 html:is([data-reading-lab], [data-reading-accents]) .calm-zone,
 html:is([data-reading-lab], [data-reading-accents]) .text-marker[data-calm-tone="neutral"] {
   position: relative;
-  --calm-accent: #8074bd;
-  --calm-paper: #e9e5ff;
-  --calm-rgb: 128, 116, 189;
-  --paint-companion: #cfceff;
-  --paint-pigment: #a88aee;
-}
-/* Paint stays behind every letter in its paragraph, including adjacent words. */
-html:is([data-reading-lab], [data-reading-accents]) .calm-zone { isolation: isolate; }
-/* Each selected phrase carries its topic across sections and projects. */
-html[data-calm-palette="strengths"] [data-calm-tone="communication"] {
-  --calm-accent: #9665cd; --calm-paper: #e8dcff; --calm-rgb: 150, 101, 205;
-  --paint-companion: #d9c3ff;
-  --paint-pigment: #b381ef;
-}
-html[data-calm-palette="strengths"] [data-calm-tone="creativity"] {
-  --calm-accent: #cb64a0; --calm-paper: #fbddf0; --calm-rgb: 203, 100, 160;
-  --paint-companion: #ffbde4;
-  --paint-pigment: #ef85bd;
-}
-html[data-calm-palette="strengths"] [data-calm-tone="strategy"] {
-  --calm-accent: #508fca; --calm-paper: #d9edff; --calm-rgb: 80, 143, 202;
+  --calm-accent: #508fca;
+  --calm-paper: #d9edff;
+  --calm-rgb: 80, 143, 202;
   --paint-companion: #aacfff;
   --paint-pigment: #79b5ed;
 }
-html[data-calm-palette="strengths"] [data-calm-tone="leadership"] {
-  --calm-accent: #3b9c84; --calm-paper: #d6f3e3; --calm-rgb: 59, 156, 132;
-  --paint-companion: #aaeacc;
-  --paint-pigment: #70d0a4;
-}
+/* Paint stays behind every letter in its paragraph, including adjacent words. */
+html:is([data-reading-lab], [data-reading-accents]) .calm-zone { isolation: isolate; }
+/* All selected phrases use the same blue palette. */
 .calm-drawing {
   position: absolute;
   pointer-events: none;

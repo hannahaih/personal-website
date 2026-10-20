@@ -5,7 +5,8 @@
   --ink: #26323c;
   --muted: #5f6870;
   --line: #e7e9ed;
-  --accent: #6251b9;
+  --accent: #3579b4;
+  --selection: #d9edff;
   --reading: 720px;
   --header-height: 82px;
   font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
@@ -24,7 +25,7 @@ body {
   isolation: isolate;
 }
 [hidden] { display: none !important; }
-::selection { background: #ece4ff; color: var(--ink); }
+::selection { background: var(--selection); color: var(--ink); }
 a { color: inherit; text-underline-offset: 5px; text-decoration-thickness: 1px; }
 button, input { font: inherit; }
 button { color: inherit; }
@@ -339,6 +340,9 @@ details[open] > summary .disclosure-sign::after { display: none; }
   line-height: 1.6;
 }
 .site-footer > div { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 28px; }
+/* Keep the published accent family consistent with the blue preview. */
+.site-header nav a:hover, .site-header nav a[aria-current],
+.back-link, .read-link, .site-footer a, #motion-toggle:hover { color: var(--accent); }
 .site-footer a { text-decoration: none; }
 .site-footer a:hover { text-decoration: underline; }
 #motion-toggle { padding: 3px 0; border: 0; background: transparent; cursor: pointer; font-size: 13px; }
