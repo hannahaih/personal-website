@@ -67,7 +67,6 @@
       if (mark.closest('summary')) return 'plain';
       return 'primary';
     }
-    if (mark.closest('#werdegang .section-intro')) return 'plain';
     if (mark.closest('[data-strength]')) return 'primary';
     // The application and personal contribution are the scan anchors;
     // outcome/status stays subordinate through typography alone.

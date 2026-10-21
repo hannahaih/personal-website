@@ -5,12 +5,16 @@
   --ink: #26323c;
   --muted: #5f6870;
   --line: #e7e9ed;
-  --accent: #3579b4;
-  --selection: #d9edff;
+  --accent: #6251b9;
+  --selection: #e9e5ff;
   --reading: 720px;
   --header-height: 82px;
   font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   font-synthesis: none;
+}
+html[lang="en"] {
+  --accent: #3579b4;
+  --selection: #d9edff;
 }
 
 * { box-sizing: border-box; -webkit-hyphens: none; hyphens: none; }
@@ -88,6 +92,7 @@ main, .site-footer, .noscript-note { position: relative; z-index: 1; }
   text-decoration: none;
 }
 .site-header nav { display: flex; align-items: center; gap: 30px; }
+.header-actions { display: flex; align-items: center; gap: 52px; }
 .site-header nav a {
   font-size: 14px;
   font-weight: 400;
@@ -99,6 +104,24 @@ main, .site-footer, .noscript-note { position: relative; z-index: 1; }
   color: var(--ink);
   text-decoration: underline;
 }
+.language-switch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  flex-shrink: 0;
+  min-height: 32px;
+  min-width: 40px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: .035em;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.language-switch svg { display: block; flex-shrink: 0; }
+.language-switch:hover { color: var(--accent); }
 
 .hero {
   display: flex;
@@ -154,7 +177,10 @@ main, .site-footer, .noscript-note { position: relative; z-index: 1; }
 .intro-link:hover { text-decoration-thickness: 2px; }
 .intro-link span { font-size: 19px; text-decoration: none; }
 .portrait { justify-self: end; width: min(100%, 410px); }
-.portrait img { width: 100%; }
+.portrait img {
+  width: 100%;
+  clip-path: polygon(6% 0, 100% 0, 100% 100%, 0 100%, 0 6%);
+}
 
 .reading-column {
   width: min(var(--reading), calc(100% - 64px));
@@ -340,7 +366,7 @@ details[open] > summary .disclosure-sign::after { display: none; }
   line-height: 1.6;
 }
 .site-footer > div { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 28px; }
-/* Keep the published accent family consistent with the blue preview. */
+/* Use one purple accent family throughout the German portfolio. */
 .site-header nav a:hover, .site-header nav a[aria-current],
 .back-link, .read-link, .site-footer a, #motion-toggle:hover { color: var(--accent); }
 .site-footer a { text-decoration: none; }
@@ -355,6 +381,7 @@ details[open] > summary .disclosure-sign::after { display: none; }
   .hero-description { font-size: 19px; }
   .portrait { width: 370px; }
   .site-header nav { gap: 22px; }
+  .header-actions { gap: 36px; }
 }
 
 @media (max-width: 760px) {
@@ -364,12 +391,15 @@ details[open] > summary .disclosure-sign::after { display: none; }
     width: calc(100% - 40px);
     min-height: 0;
     padding-block: 17px 15px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 12px 0;
   }
+  .header-actions { display: contents; }
   .brand { font-size: 18px; }
-  .site-header nav { width: 100%; gap: 0; justify-content: space-between; }
+  .site-header nav { grid-column: 1 / -1; grid-row: 2; width: 100%; gap: 0; justify-content: space-between; }
+  .site-header .language-switch { grid-column: 2; grid-row: 1; }
   .site-header nav a { font-size: 12px; line-height: 1.5; }
   .hero { min-height: 0; padding-block: 24px 68px; }
   .hero-inner { width: calc(100% - 40px); display: flex; flex-direction: column; align-items: flex-start; gap: 25px; }

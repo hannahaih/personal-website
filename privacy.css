@@ -16,9 +16,11 @@
 .privacy-updated { margin-top: 48px; font-size: 14px; color: var(--muted); }
 .privacy-home-link { font-size: 14px; color: var(--muted); text-decoration: none; }
 .privacy-home-link:hover { text-decoration: underline; }
+.privacy-page .site-header nav { width: auto; flex-shrink: 0; gap: 16px; }
 @media (max-width: 760px) {
-  .privacy-page .header-inner { flex-direction: row; align-items: center; gap: 20px; }
   .privacy-home-link { font-size: 12px; }
+  .privacy-page .brand > span { font-size: 15px; }
+  .privacy-page .site-header nav { gap: 8px; }
   .privacy-content { padding-block: 40px 64px; font-size: 16px; }
   .privacy-section { margin-top: 30px; }
   .privacy-section h2 { font-size: 21px; }

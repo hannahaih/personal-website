@@ -4,6 +4,7 @@
   const caseView=document.getElementById('case-view');
   const caseBody=document.getElementById('case-body');
   const cases=window.HR_CASES || [];
+  const ui=window.HR_UI || {};
   const homeTitle=window.HR_SITE_TITLE || 'Hannah Reber · Digitale Strategie & Transformation';
   const escapeHTML=value=>String(value || '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   function highlightText(value, phrases=[]) {
@@ -20,7 +21,7 @@
   }
   let shownCase=null;
   let refreshInkGuards=()=>{};
-  const navLinks=[...document.querySelectorAll('.site-header nav a')];
+  const navLinks=[...document.querySelectorAll('.site-header nav a:not([data-language-switch])')];
   function updateNavigation() {
     let current='';
     if(!home.hidden) {
@@ -48,7 +49,7 @@
         caseBody.dataset.markerTone=selected.markerTone || 'yellow';
         const facts=Array.isArray(selected.facts) ? selected.facts : [];
         const overview=facts.length ? `<dl class="case-facts">${facts.map(fact=>`<div><dt>${escapeHTML(fact.label)}</dt><dd>${escapeHTML(fact.value)}</dd></div>`).join('')}</dl>` : `<p class="case-lede">${escapeHTML(selected.role)}</p>`;
-        caseBody.innerHTML=`<header class="case-heading" data-ink-guard><h1 id="case-title" tabindex="-1">${escapeHTML(selected.title)}</h1><p class="project-name">${escapeHTML(selected.projectName)}</p>${overview}</header>${selected.sections.map(section=>`<section class="case-section" data-ink-guard><h2>${escapeHTML(section.title)}</h2><p data-marker-scope>${highlightText(section.text,section.highlights)}</p></section>`).join('')}<div class="case-end" data-ink-guard><a href="#fallstudien">Alle Fallstudien <span aria-hidden="true">→</span></a></div>`;
+        caseBody.innerHTML=`<header class="case-heading" data-ink-guard><h1 id="case-title" tabindex="-1">${escapeHTML(selected.title)}</h1><p class="project-name">${escapeHTML(selected.projectName)}</p>${overview}</header>${selected.sections.map(section=>`<section class="case-section" data-ink-guard><h2>${escapeHTML(section.title)}</h2><p data-marker-scope>${highlightText(section.text,section.highlights)}</p></section>`).join('')}<div class="case-end" data-ink-guard><a href="#fallstudien">${escapeHTML(ui.allCases || 'Alle Fallstudien')} <span aria-hidden="true">→</span></a></div>`;
         window.scrollTo({top:0,behavior:'instant'});
         if(!initial)document.getElementById('case-title').focus({preventScroll:true});
       }
@@ -119,7 +120,7 @@
     context?.clearRect(0,0,innerWidth,innerHeight);
   }
   function syncToggle() {
-    toggle.textContent=enabled?'Farbspiel ausschalten':'Farbspiel einschalten';
+    toggle.textContent=enabled?(ui.motionOff || 'Farbspiel ausschalten'):(ui.motionOn || 'Farbspiel einschalten');
     toggle.setAttribute('aria-pressed',String(!enabled));
     document.documentElement.dataset.colour=enabled?'on':'off';
   }

@@ -343,14 +343,11 @@ window.HR_DOG_QUOTES = [
   "Das ist Sumi, mein schönstes Reinforcement-Learning-Projekt.\nSeit zehn Jahren im Training, Reward: Käse.\nInzwischen bekommt sie den Käse auch, ohne Sitz zu machen.\nIn der Fachsprache heißt das Reward Hacking.",
   "Sumi, Chief Morale Officer. Arbeitet viel im Hintergrund.\nGenauer gesagt unter meinem Schreibtisch.",
   "Ja, das ist ein strategisch platziertes Bild von meinem Hund.\nIch verstehe auch etwas von Marketing.",
-  "Sumi, Chief Morale Officer. Denkt nie über den Tellerrand hinaus.\nWas auf dem Teller ist, reicht ihr völlig.",
-  "Sumi. Zehn Jahre Reinforcement Learning, Reward-Funktion Käse.\nBeherrscht inzwischen vor allem Reward Hacking.",
-  "Das ist Sumi, ich trainiere sie seit 10 Jahren.\nSie klassifiziert alle Menschen zuverlässig in zwei Kategorien:\nFreund und Postbote.",
-  "Sumi, Chief Morale Officer.\nArbeitet ergebnisoffen, solange das Ergebnis Käse ist.",
-  "Bellt auch, wenn es im Fernsehen klingelt.\nKlassischer False Positive.",
-  "Sumi, Chief Morale Officer. Hat das große Ganze im Blick.\nSolange es eine Käseplatte ist.",
-  "Sumi. Transfer Learning funktioniert hervorragend.\nDiesen Blick setzt sie inzwischen auch bei Gästen ein.",
-  "Sumi, mein schönstes Reinforcement-Learning-Projekt.\nSeit zehn Jahren im Training, Reward: Käse.\nDen Umweg über ‚Sitz’ hat sie inzwischen erfolgreich wegoptimiert.",
-  "Sumi. Zehn Jahre Reinforcement Learning, Reward: Käse.\nLeidet unter Catastrophic Forgetting:\nSobald es klingelt, ist alles Training vergessen."
+  "Für Sumi gibt es zwei Kategorien von Menschen.\nFreund und Postbote.",
+  "Sumi, Head of Snacks. Denkt nie über den Tellerrand hinaus.\nWas auf dem Teller ist, reicht ihr völlig.",
+  "Meine Expertin für nonverbale Kommunikation.\nDiesen Blick setzt Sumi inzwischen auch bei Gästen ein.\nTransfer Learning funktioniert hervorragend.",
+  "Sumi. Arbeitet ergebnisoffen,\nsolange das Ergebnis Käse ist.",
+  "Unsere Sicherheitsbeauftragte bellt auch, wenn es im Fernsehen klingelt.\nKlassischer False Positive."
 ];
 window.HR_SITE_TITLE = "Hannah Reber · Digitale Strategie & Transformation";
+window.HR_UI = {"allCases": "Alle Fallstudien", "motionOff": "Farbspiel ausschalten", "motionOn": "Farbspiel einschalten"};
