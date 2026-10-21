@@ -21,11 +21,11 @@ html:is([data-reading-lab], [data-reading-accents]) .text-marker {
 html:is([data-reading-lab], [data-reading-accents]) .calm-zone,
 html:is([data-reading-lab], [data-reading-accents]) .text-marker[data-calm-tone="neutral"] {
   position: relative;
-  --calm-accent: #8074bd;
-  --calm-paper: #e9e5ff;
-  --calm-rgb: 128, 116, 189;
-  --paint-companion: #cfceff;
-  --paint-pigment: #a88aee;
+  --calm-accent: #df936b;
+  --calm-paper: #ffeadb;
+  --calm-rgb: 223, 147, 107;
+  --paint-companion: #ffcdb6;
+  --paint-pigment: #f6a37b;
 }
 html[lang="en"][data-reading-accents] .calm-zone,
 html[lang="en"][data-reading-accents] .text-marker[data-calm-tone="neutral"] {
@@ -37,7 +37,7 @@ html[lang="en"][data-reading-accents] .text-marker[data-calm-tone="neutral"] {
 }
 /* Paint stays behind every letter in its paragraph, including adjacent words. */
 html:is([data-reading-lab], [data-reading-accents]) .calm-zone { isolation: isolate; }
-/* All selected phrases use the German purple palette. */
+/* All selected phrases use the German orange palette. */
 .calm-drawing {
   position: absolute;
   pointer-events: none;
