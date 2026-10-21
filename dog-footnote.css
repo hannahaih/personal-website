@@ -49,17 +49,17 @@
   align-items: center;
   justify-content: center;
   flex: none;
-  width: 24px;
-  height: 24px;
-  padding: 0;
-  border: 1px solid var(--line);
+  width: 28px;
+  height: 28px;
+  padding: 1px;
+  border: 0;
   border-radius: 50%;
-  background: var(--paper);
+  background: transparent;
   color: var(--muted);
   cursor: pointer;
 }
-.dog-quote-next:hover { color: var(--accent); border-color: var(--accent); }
-.dog-quote-next svg { flex: none; width: 16px; height: 16px; }
+.dog-quote-next img { flex: none; width: 26px; height: 26px; }
+.dog-quote-next:hover img { opacity: .75; }
 @media (max-width: 680px) {
   .personal-footnote { gap: 16px; }
 }

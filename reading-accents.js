@@ -34,21 +34,22 @@
     return r.width > 0 && Math.min(r.bottom, bottom) - Math.max(r.top, top) > Math.min(r.height * .25, 28);
   }
   function chapter(zone) {
-    return zone.closest('.case-section, .case-heading, section[id]') || zone;
+    return zone.closest('details') || zone.closest('.case-section, .case-heading, section[id]') || zone;
   }
   function scan() {
     frame = 0;
     if (suspended) return;
     const chapters = new Map();
     zones.forEach(zone => {
+      // Closed entries keep their reveal until their content is opened.
+      if (zone.closest('details:not([open])')) return;
       const section = chapter(zone);
       if (!chapters.has(section)) chapters.set(section, []);
       chapters.get(section).push(zone);
     });
     chapters.forEach(members => {
       // Start the whole chapter in one frame when its first text enters view.
-      // Hidden accordion content belongs to the same reveal, so opening it
-      // later does not introduce another distracting animation.
+      // Each accordion is its own chapter; other sections still reveal together.
       const started = members.some(zone => zone.classList.contains('calm-seen'));
       if (started || members.some(visible)) {
         members.forEach(zone => zone.classList.add('calm-seen'));
